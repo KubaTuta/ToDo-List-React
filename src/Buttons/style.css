@@ -1,0 +1,22 @@
+.section__buttons {
+    border: none;
+    color: hsl(180, 100%, 25%);
+    background-color: transparent;
+    font-size: 15px;
+    margin-top: 3px;
+    transition: 1s;
+}
+
+@media(max-width: 500px) {
+    .section__buttons {
+        display: grid;
+    }
+}
+
+.section__buttons:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.section__buttons:disabled {
+    color: hsl(0, 0%, 80%);
+}

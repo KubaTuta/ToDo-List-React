@@ -1,0 +1,68 @@
+.list {
+    padding: 20px;
+    margin: 1px 0px;
+    list-style-type: none;
+}
+
+.list__ul {
+    padding-left: 0px;
+}
+
+.list__li {
+    display: flex;
+    justify-content: stretch;
+    border-bottom: 1px solid hsl(249, 46%, 55%);
+    line-height: 2.5;
+}
+.list__li--hidden {
+    display: none;
+}
+
+.list__li--underlined {
+    display: flex;
+    justify-content: stretch;
+    border-bottom: 1px solid hsl(0, 83%, 47%);
+    line-height: 2.5;
+    text-decoration: line-through;
+}
+
+.list__birdie {
+    background-color: hsl(120, 100%, 25%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin-top: 5px;
+    transition: 1s;
+}
+.list__birdie:hover {
+    background-color: hsl(120, 100%, 35%);
+}
+
+.list__text {
+    flex-grow: 1;
+    inline-size: 100px;
+    overflow-wrap: break-word;
+}
+.list__text--underlined {
+    flex-grow: 1;
+    inline-size: 100px;
+    overflow-wrap: break-word;
+    text-decoration: line-through;
+}
+.list__remove {
+    background-color: hsl(348, 83%, 47%);
+    border: none;
+    color: hsl(0, 0%, 100%);
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin-top: 5px;
+    transition: 1s;
+}
+.list__remove:hover {
+    background-color: hsl(348, 83%, 60%);
+}

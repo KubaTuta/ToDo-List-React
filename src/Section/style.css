@@ -1,0 +1,23 @@
+.section {
+    background-color: hsl(0, 0%, 100%);
+    margin: 1px 0px 10px;
+  }
+  
+  .section__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 10px;
+    margin: 1px 0px;
+    border-bottom: 1px solid hsl(0, 0%, 87%);
+  }
+  
+  @media (max-width: 500px) {
+    .section__header {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .section__h2 {
+    margin: 0;
+  }
