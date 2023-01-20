@@ -8,7 +8,7 @@ import Container from './Container';
 
 const tasks = [
   { content: "przejść na Reacta", done: true, },
-  { content: "umyć dupe", done: true, }
+  { content: "wrzuć coś na ząb", done: true, }
 ];
 const hideDoneTasks = false;
 
@@ -19,7 +19,7 @@ function App() {
 
       <Section 
       title="Dodaj nowe zadanie" 
-      body={<Form />} 
+      body={<Form />}
       />
       
       <Section 
