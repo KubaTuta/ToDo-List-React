@@ -11,6 +11,9 @@
     .buttons__button {
         display: grid;
     }
+    .buttons {
+        justify-self: center;
+    }
 }
 
 .buttons__button:hover {
