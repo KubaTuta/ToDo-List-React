@@ -2,9 +2,9 @@ import React from "react";
 import "./style.css";
 
 const Form = () => (
-    <form className="section__addNewTask">
-        <input className="section__input" type="text" placeholder="Co jest do zrobienia?" />
-        <button className="addButton">Dodaj zadanie</button>
+    <form className="form">
+        <input className="form__input" type="text" placeholder="Co jest do zrobienia?" />
+        <button className="form__addButton">Dodaj zadanie</button>
     </form>
 );
 

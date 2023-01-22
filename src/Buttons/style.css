@@ -1,4 +1,4 @@
-.section__buttons {
+.buttons__button {
     border: none;
     color: hsl(180, 100%, 25%);
     background-color: transparent;
@@ -8,15 +8,15 @@
 }
 
 @media(max-width: 500px) {
-    .section__buttons {
+    .buttons__button {
         display: grid;
     }
 }
 
-.section__buttons:hover {
+.buttons__button:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.section__buttons:disabled {
+.buttons__button:disabled {
     color: hsl(0, 0%, 80%);
 }
