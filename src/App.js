@@ -9,8 +9,8 @@ import Container from './Container';
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState([
-    { content: "przejść na Reacta", done: false, },
-    { content: "wrzuć coś na ząb", done: true, }
+    { id: 1, content: "przejść na Reacta", done: false,},
+    { id: 2, content: "wrzuć coś na ząb", done: true, }
   ]);
 
   const toggleHideDone = () => {
@@ -19,6 +19,15 @@ function App() {
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
+  };
+
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if (task.id === id) {
+        return {...task, done: !task.done}
+      };
+      return task;
+    }));
   };
 
   return (
@@ -34,7 +43,7 @@ function App() {
         title="Lista zadań"
         body={
           <div className="list">
-            <Tasks tasks={tasks} hideDone={hideDone} removeTask={removeTask} />
+            <Tasks tasks={tasks} hideDone={hideDone} removeTask={removeTask} toggleTaskDone={toggleTaskDone} />
           </div>
         }
         extraHeaderContent={
