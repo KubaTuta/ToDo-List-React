@@ -9,7 +9,7 @@ import Container from './Container';
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState([
-    { id: 1, content: "przejść na Reacta", done: false,},
+    { id: 1, content: "przejść na Reacta", done: false, },
     { id: 2, content: "wrzuć coś na ząb", done: true, }
   ]);
 
@@ -24,7 +24,7 @@ function App() {
   const toggleTaskDone = (id) => {
     setTasks(tasks => tasks.map(task => {
       if (task.id === id) {
-        return {...task, done: !task.done}
+        return { ...task, done: !task.done }
       };
       return task;
     }));
@@ -32,9 +32,20 @@ function App() {
 
   const setAllDone = () => {
     setTasks(tasks => tasks.map(task => ({
-      ...task, 
+      ...task,
       done: true
     })));
+  };
+
+  const addNewTask = (newTaskContent) => {
+    setTasks(tasks => [
+      ...tasks,
+      {
+        content: newTaskContent,
+        done: false,
+        id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
+      },
+    ]);
   };
 
   return (
@@ -43,7 +54,7 @@ function App() {
 
       <Section
         title="Dodaj nowe zadanie"
-        body={<Form />}
+        body={<Form addNewTask={addNewTask} />}
       />
 
       <Section
