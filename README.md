@@ -2,7 +2,7 @@
 ## Adding tasks, removing, marking as done
 ### Responsive on small and large screens
 #### DEMO
-##### https://kubatuta.github.io/todo-list-react/
+##### https://kubatuta.github.io/ToDo-List_React/
 
 ![gif](https://github.com/KubaTuta/List-of-tasks/blob/main/img/task.gif?raw=true)
 
