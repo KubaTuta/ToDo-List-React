@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from './Form';
 import Tasks from './Tasks';
 import Buttons from './Buttons';
@@ -6,8 +6,8 @@ import Section from './Section';
 import Header from './Header';
 import Container from './Container';
 
-function App() {
-  const [hideDone, setHideDone] = useState(false);
+
+const useTasks = () => {
   const downloadedTasks = localStorage.getItem("tasks");
   const [tasks, setTasks] = useState(downloadedTasks ? JSON.parse(downloadedTasks) : []);
 
@@ -15,10 +15,6 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks))
   },
     [tasks]);
-
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone);
-  };
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
@@ -50,6 +46,20 @@ function App() {
       },
     ]);
   };
+  return {tasks, removeTask, toggleTaskDone, setAllDone, addNewTask}
+};
+
+function App() {
+  const [hideDone, setHideDone] = useState(false);
+  const toggleHideDone = () => {setHideDone(hideDone => !hideDone)};
+
+  const {
+    tasks, 
+    removeTask, 
+    toggleTaskDone, 
+    setAllDone, 
+    addNewTask
+  } = useTasks();
 
   return (
     <Container>
