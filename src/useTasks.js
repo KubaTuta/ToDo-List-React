@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
- const useTasks = () => {
+ export const useTasks = () => {
     const downloadedTasks = localStorage.getItem("tasks");
     const [tasks, setTasks] = useState(downloadedTasks ? JSON.parse(downloadedTasks) : []);
   
@@ -42,4 +42,3 @@ import { useState, useEffect } from "react";
     return {tasks, removeTask, toggleTaskDone, setAllDone, addNewTask}
   };
 
-export default useTasks;
