@@ -7,6 +7,7 @@ import Header from './Header';
 import Container from './Container';
 import {useTasks} from "./useTasks";
 
+
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const toggleHideDone = () => {setHideDone(hideDone => !hideDone)};
@@ -18,7 +19,7 @@ function App() {
     setAllDone, 
     addNewTask
   } = useTasks();
-
+   
   return (
     <Container>
       <Header title="Lista zadań" />
