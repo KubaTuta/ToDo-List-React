@@ -15,9 +15,3 @@ body {
   margin: 50px auto;
   max-width: 900px;
 }
-
-.list {
-  padding: 20px;
-  margin: 1px 0px;
-  list-style-type: none;
-}

@@ -23,23 +23,19 @@ function App() {
   return (
     <Container>
       <Header title="Lista zadań" />
-
       <Section
         title="Dodaj nowe zadanie"
         body={<Form addNewTask={addNewTask} />}
       />
-
       <Section
         title="Lista zadań"
         body={
-          <div className="list">
             <Tasks
               tasks={tasks}
               hideDone={hideDone}
               removeTask={removeTask}
               toggleTaskDone={toggleTaskDone}
             />
-          </div>
         }
         extraHeaderContent={
           <Buttons

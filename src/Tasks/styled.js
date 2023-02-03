@@ -53,3 +53,9 @@ export const Button = styled.button`
     `
     }
 `;
+
+export const Div = styled.div`
+    padding: 20px;
+    margin: 1px 0px;
+    list-style-type: none;
+`;
