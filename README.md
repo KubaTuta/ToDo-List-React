@@ -16,7 +16,7 @@
 - Transitions
 - Transform
 - @media queries
-3. JAVASCRIPT (in future)
+3. JAVASCRIPT
 - Arrow functions
 - Callbacks
 - Objects
@@ -27,7 +27,17 @@
 - JSX
 - Webpack
 - Babel
-5. MARKDOWN
+- LocalStorage (not working yet on Redux)
+- useState, useEffect, useRef
+- custom hooks (not available on Redux)
+- setTimeOut, setInterval
+5. Redux
+- action creator
+- reducer
+- dispatch & selector
+- createSlice
+6. Styled components
+7. MARKDOWN
 
 
 # Getting Started with Create React App
