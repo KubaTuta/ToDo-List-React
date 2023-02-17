@@ -7,7 +7,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    tasks: tasksReducer,
+    tasks: tasksReducer,  // skąd zaciągany jst tasks Reduer czyżby z 'tasks' 13.02 17min
   },
   middleware: [sagaMiddleware],
 });

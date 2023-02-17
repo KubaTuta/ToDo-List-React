@@ -2,32 +2,32 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getTasksFromLocalStorage } from "./tasksLocalStorage";
 
 const tasksSlice = createSlice({
-  name: 'tasks',
+  name: 'tasks', //nazwa slice'a
   initialState: {
     tasks: getTasksFromLocalStorage(),
     hideDone: false,
   },
   reducers: {
-    addTask: (state, action) => {
-      state.tasks.push(action.payload);
+    addTask: ({tasks}, {payload: task}) => {
+      tasks.push(task);
     },
     toggleHideDone: state => {
       state.hideDone = !state.hideDone
     },
-    toggleTaskDone: (state, action) => {
-      const index = state.tasks.findIndex(task => task.id === action.payload);
-      state.tasks[index].done = !state.tasks[index].done;
+    toggleTaskDone: ({tasks}, {payload}) => {
+      const index = tasks.findIndex(({id}) => id === payload);
+      tasks[index].done = !tasks[index].done;
     },
-    removeTask: (state, action) => {
-      const index = state.tasks.findIndex(task => task.id === action.payload);
-      state.tasks.splice(index, 1);
+    removeTask: ({tasks}, {payload}) => {
+      const index = tasks.findIndex(({id}) => id === payload);
+      tasks.splice(index, 1);
     },
-    setAllDone: (state) => {
-      state.tasks.map(task => task.done = true);
+    setAllDone: ({tasks}) => {
+      tasks.map(task => task.done = true);
     },
     fetchExampleTasks: () => {
     },
-    setTasks: (state, { payload: tasks }) => {
+    setExampleTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
     },
   },
@@ -40,7 +40,9 @@ export const {
   removeTask,
   setAllDone,
   fetchExampleTasks,
-  setTasks
-} = tasksSlice.actions;
-export const selectTasks = state => state.tasks;
-export default tasksSlice.reducer;
+  setExampleTasks
+} = tasksSlice.actions; //action creator automatycznie stworzeone przez createSlice w polu .actions (type: nazwa slice'a/nazwa reducera)
+export const selectState = state => state.tasks; //selektor, który zwraca cały stan
+export const selectTasks = state => selectState(state).tasks; //selektor, który zwraca zadania
+export const selectHideDone = state => selectState(state).hideDone;
+export default tasksSlice.reducer; //create slice zwraca klasyczne reducery, przekazany do store jako taskReducer
