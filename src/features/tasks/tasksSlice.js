@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getTasksFromLocalStorage } from "./tasksLocalStorage";
 
 const tasksSlice = createSlice({
-  name: 'tasksName', //nazwa slice'a
+  name: 'tasksParent', //nazwa slice'a
   initialState: {
     tasks: getTasksFromLocalStorage(),
     hideDone: false,
@@ -42,7 +42,7 @@ export const {
   fetchExampleTasks,
   setExampleTasks
 } = tasksSlice.actions; //action creator automatycznie stworzeone przez createSlice w polu .actions (type: nazwa slice'a/nazwa reducera)
-export const selectState = state => state.tasksName; //selektor, który zwraca cały stan
+export const selectState = state => state.tasksParent; //selektor, który zwraca cały stan
 export const selectTasks = state => selectState(state).tasks; //selektor, który zwraca zadania
 export const selectHideDone = state => selectState(state).hideDone;
 export default tasksSlice.reducer; //create slice zwraca klasyczne reducery, przekazany do store jako taskReducer
