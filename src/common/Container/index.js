@@ -1,8 +1,8 @@
-import React from 'react';
+import { StyledMain } from "./styled";
 
 const Container = ({children}) => (
-    <main className="container">
+    <StyledMain>
         {children}
-    </main>
+    </StyledMain>
 );
 export default Container;

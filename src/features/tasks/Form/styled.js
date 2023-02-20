@@ -4,16 +4,11 @@ export const StyledForm = styled.form`
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 10px;
-    padding: 10px;
+    padding: 20px;
 
     @media(max-width) {
         grid-template-columns: auto;
     }
-`;
-
-export const Input = styled.input`
-    display: block;
-    height: 30px;
 `;
 
 export const Button = styled.button`
@@ -21,7 +16,8 @@ export const Button = styled.button`
     background-color: hsl(180, 100%, 25%);
     border: none;
     transition: 1s;
-    height: 30px;
+    height: 40px;
+    padding: 10px;
 
     &:hover {
         background-color: hsl(180, 100%, 35%);

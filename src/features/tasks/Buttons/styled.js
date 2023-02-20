@@ -7,6 +7,7 @@ export const Div = styled.div`
 `;
 
 export const Button = styled.button`
+
     border: none;
     color: hsl(180, 100%, 25%);
     background-color: transparent;

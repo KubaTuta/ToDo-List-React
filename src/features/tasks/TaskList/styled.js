@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ListUl = styled.ul`
     padding-left: 0px;
@@ -7,9 +8,9 @@ export const ListUl = styled.ul`
 export const ItemLi = styled.li`
     display: flex;
     justify-content: stretch;
-    border-bottom: 1px solid hsl(249, 46%, 55%);
+    border-bottom: 1px solid hsl(0, 13%, 89%);
     line-height: 2.5;
-
+    
     ${({ hidden }) => hidden && css`
     display: none;
     `};
@@ -58,4 +59,9 @@ export const Div = styled.div`
     padding: 20px;
     margin: 1px 0px;
     list-style-type: none;
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: hsl(180, 100%, 25%);
 `;
