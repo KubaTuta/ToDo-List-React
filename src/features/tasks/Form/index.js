@@ -17,7 +17,7 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        dispatch(addTask({
+        newTaskContent.trim().length > 0 && dispatch(addTask({
             content: newTaskContent.trim(),
             done: false,
             id: nanoid(),
