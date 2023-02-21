@@ -1,10 +1,9 @@
 import React from 'react';
-import { Div, Button } from "./styled";
+import { Div, Button } from "../../../common/StyledButtons/styled";
 import { useSelector, useDispatch } from 'react-redux';
 import {
     toggleHideDone,
     setAllDone,
-    fetchExampleTasks,
     selectTasks,
     selectHideDone,
 } from '../tasksSlice';
@@ -16,9 +15,6 @@ const Buttons = () => {
 
     return (
         <Div>
-            <Button onClick={() => dispatch(fetchExampleTasks())}>
-                Pobierz przykładowe zadania
-            </Button>
             <Button
                 onClick={() => dispatch(toggleHideDone())}
             >

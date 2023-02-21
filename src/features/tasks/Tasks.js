@@ -6,15 +6,18 @@ import Section from '../../common/Section';
 import Header from '../../common/Header';
 import Container from '../../common/Container';
 import Search from './Search';
+import { ExampleFetcher } from './ExampleFetcher';
+import { Wrapper } from '../../styled';
 
 function Tasks() {
 
   return (
     <Container>
-      <div>
+      <Wrapper>
         <Header title="Lista zadań" />
         <Section
           title="Dodaj nowe zadanie"
+          extraHeaderContent={<ExampleFetcher />}
           body={<Form />}
         />
         <Section
@@ -26,7 +29,7 @@ function Tasks() {
           body={<TaskList />}
           extraHeaderContent={<Buttons />}
         />
-      </div>
+      </Wrapper>
     </Container>
   );
 };

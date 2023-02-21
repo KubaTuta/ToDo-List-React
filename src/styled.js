@@ -23,3 +23,7 @@ export const StyledNavLink = styled(NavLink)`
   }
    
 `;
+
+export const Wrapper = styled.div`
+  flex-basis: 900px;
+`;
