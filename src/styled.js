@@ -6,12 +6,12 @@ export const StyledUl = styled.ul`
     list-style-type: none;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     margin: 0;
     background-color: teal;
     width: 100vw;
-    height: 30px;
-    
+    height: 50px;
+    padding-inline-start: 0;
 `;
 
 export const StyledNavLink = styled(NavLink)`

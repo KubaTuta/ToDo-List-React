@@ -15,7 +15,12 @@ const SingleTaskPage = () => {
         <Header title="Szczegóły zadania" />
         <Section
           title={task ? task.content : "Nie znaleziono takiego zadania"}
-          body={task.done ? "Zadanie ukończone" : "Nie ukończono zadania"}
+          body={!!task && (
+            <>
+            {task.done ? "Zadanie ukończone" : "Nie ukończono zadania"}
+            </>
+          )
+          }
         />
       </div>
 

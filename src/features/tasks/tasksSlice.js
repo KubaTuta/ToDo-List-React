@@ -25,11 +25,20 @@ const tasksSlice = createSlice({
     setAllDone: ({ tasks }) => {
       tasks.map(task => task.done = true);
     },
-    fetchExampleTasks: () => {
-    },
     setExampleTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
+      state.loading = true;
     },
+    fetchExampleTasks: (state) => {
+      state.loading = true;
+    },
+    fetchExampleTasksSuccess: (state, { payload: tasks }) => {
+        state.tasks = tasks;
+        state.loading = false;
+    },
+    fetchExampleTasksError: (state) => {
+      state.loading = false;
+    }
   },
 });
 
@@ -40,11 +49,16 @@ export const {
   removeTask,
   setAllDone,
   fetchExampleTasks,
-  setExampleTasks
+  setExampleTasks,
+  fetchExampleTasksSuccess,
+  fetchExampleTasksLoad,
+  fetchExampleTasksError,
 } = tasksSlice.actions; 
+
 export const selectState = state => state.tasksParent; 
 export const selectTasks = state => selectState(state).tasks; 
 export const selectHideDone = state => selectState(state).hideDone;
+export const selectLoading = state => selectState(state).loading;
 
 export const getTaskbyId = (state, taskId) =>
   selectTasks(state).find(({ id }) => id === taskId);
